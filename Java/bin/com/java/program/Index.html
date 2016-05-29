@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Sentiment Analysis System of Online Shopping Reviews</title>
+</head>
+<body>
+	<h1>网购评语情感分析系统</h1>
+	<div>
+		<h2><a href="default.jsp">使用默认参数:</a></h2>
+		<p>https://rate.tmall.com/list_detail_rate.htm?itemId=2661994242&amp;sellerId=217042976&amp;order=3&amp;currentPage=1</p>
+	</div>
+	<div>
+		<h2>使用自定义参数:</h2>
+		<br/>
+		<div>
+			<form action="custom.jsp" method="post">
+				<p>itemId<input type="text" name="itemId" /></p>
+				<p>sellerId<input type="text" name="sellerId" /></p>
+				<p>pageCount<input type="text" name="pageCount" /></p>
+				<p><input type="submit" value="submit" /></p>
+			</form>
+		</div>
+	</div>
+</body>
+</html>
