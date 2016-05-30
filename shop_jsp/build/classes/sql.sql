@@ -19,8 +19,7 @@ create table category
 id int primary key auto_increment not null,
 pid int not null, 
 name varchar(255) not null, 
-descr varchar(255) not null,
-cno int not null, 
+description varchar(255) not null,
 grade int not null
 )charset=utf8;
 
@@ -31,9 +30,9 @@ name varchar(255) not null,
 description varchar(255) not null,
 price double not null,
 categoryid int references catetory(id),
-stock int not null default 0,
 sales int not null default 0,
-createtime timestamp not null default CURRENT_TIMESTAMP
+createtime timestamp not null default CURRENT_TIMESTAMP,
+is_offshelve tinyint(1) not null default 0
 )charset=utf8;
 
 create table salesorder
@@ -43,7 +42,8 @@ userid int not null,
 addrress varchar(255) not null,
 phone varchar(20) not null,
 ordertime timestamp not null default CURRENT_TIMESTAMP,
-status tinyint(1) not null default 0
+is_payed tinyint(1) not null default 0,
+is_shipped tinyint(1) not null default 0
 )charset=utf8;
 
 create table salesitem 
@@ -54,3 +54,5 @@ uniprice double not null,
 productcount int not null,
 orderid int not null
 )charset=utf8;
+
+INSERT INTO user (username,password,email,phone,address) VALUES ("username","5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8","email@email.com","00000000000","adress")

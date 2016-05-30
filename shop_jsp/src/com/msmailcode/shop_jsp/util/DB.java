@@ -85,31 +85,30 @@ public class DB {
     
     //SELECT NOT ONE
     public List<Map<String, Object>> queryResults(String sql, List<Object> params) throws SQLException{  
-        List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();  
-        int index = 1;  
-        stmt = connection.prepareStatement(sql);  
-        if(params != null && !params.isEmpty()){  
-            for(int i = 0; i<params.size(); i++){  
-                stmt.setObject(index++, params.get(i));  
-            }  
-        }  
-        resultSet = stmt.executeQuery();  
-        ResultSetMetaData metaData = resultSet.getMetaData();  
-        int cols_len = metaData.getColumnCount();  
-        while(resultSet.next()){  
-            Map<String, Object> map = new HashMap<String, Object>();  
-            for(int i=0; i<cols_len; i++){  
-                String cols_name = metaData.getColumnName(i+1);  
-                Object cols_value = resultSet.getObject(cols_name);  
-                if(cols_value == null){  
-                    cols_value = "";  
-                }  
-                map.put(cols_name, cols_value);  
-            }  
-            list.add(map);  
-        }  
-  
-        return list;  
+        List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
+        int index = 1;
+        stmt = connection.prepareStatement(sql);
+        if(params != null && !params.isEmpty()){
+            for(int i = 0; i<params.size(); i++){
+                stmt.setObject(index++, params.get(i));
+            }
+        }
+        resultSet = stmt.executeQuery();
+        ResultSetMetaData metaData = resultSet.getMetaData();
+        int cols_len = metaData.getColumnCount();
+        while(resultSet.next()){
+            Map<String, Object> map = new HashMap<String, Object>();
+            for(int i=0; i<cols_len; i++){
+                String cols_name = metaData.getColumnName(i+1);
+                Object cols_value = resultSet.getObject(cols_name);
+                if(cols_value == null){
+                    cols_value = "";
+                }
+                map.put(cols_name, cols_value);
+            }
+            list.add(map);
+        }
+        return list;
     }
     
     public void close(){  

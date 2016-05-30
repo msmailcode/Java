@@ -49,15 +49,17 @@ public class UserDao extends BaseDao{
 		
 	}
 	
-	public boolean isValidUser(String username,String password){
-		String sql = "SELECT password FROM user WHERE username = ?";
+	//is valid user => return id; is not valid user => return 0
+	public int isValidUser(String username,String password){
+		String sql = "SELECT id,password FROM user WHERE username = ?";
 		List<Object> params =new ArrayList<Object>();
 		params.add(username);
-		boolean flag = false;
+		int flag = 0;
 		try {
-			String pwd = (String)db.queryResult(sql, params).get("password");
+			Map<String,Object> result = db.queryResult(sql, params);
+			String pwd = (String)result.get("password");
 			if(password.equals(pwd)){
-				flag = true;
+				flag = (int) result.get("id");
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();

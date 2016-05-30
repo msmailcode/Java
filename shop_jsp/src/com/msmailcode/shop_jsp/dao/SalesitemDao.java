@@ -3,6 +3,7 @@ package com.msmailcode.shop_jsp.dao;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 /*
  create table salesitem 
@@ -32,5 +33,20 @@ public class SalesitemDao extends BaseDao {
 			db.close();
 		}
 		return flag;
+	}
+	
+	public List<Map<String,Object>> getItems(int oid){
+		String sql = "SELECT productid,prdoctcount FROM salesitem WHERE orderid = ?";
+		List<Object> params =new ArrayList<Object>();
+		params.add(oid);
+		List<Map<String, Object>> results = new ArrayList<Map<String, Object>>();
+		try {
+			results = db.queryResults(sql, params);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			db.close();
+		}
+		return results;
 	}
 }
