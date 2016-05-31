@@ -7,6 +7,8 @@ import java.util.Map;
 
 import org.apache.commons.codec.digest.DigestUtils;
 
+import com.msmailcode.shop_jsp.model.Model;
+
 public class function {
 	public static void main(String[] args){
 		/*
@@ -25,5 +27,8 @@ public class function {
 		System.out.println(sql);
 		*/
 		//System.out.println(DigestUtils.sha1Hex("password")); 5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8
+		Model model =new Model();
+		Map<String,Object> product = model.getProduct(1);
+		System.out.println(product);
 	}
 }

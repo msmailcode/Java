@@ -119,16 +119,20 @@ public class DB {
                 e.printStackTrace();  
             }  
         }
-        try {
-			stmt.close();
-		} catch (SQLException e) {			
-			e.printStackTrace();
-		}
-        try {
-			connection.close();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
+        if(stmt != null){
+        	try {
+    			stmt.close();
+    		} catch (SQLException e) {			
+    			e.printStackTrace();
+    		}
+        }
+        if(connection != null){
+        	try {
+    			connection.close();
+    		} catch (SQLException e) {
+    			e.printStackTrace();
+    		}
+        }
     }
     
 }

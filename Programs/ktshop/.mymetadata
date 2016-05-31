@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="ktshop"
+  id="myeclipse.1280916638953"
+  context-root="/ktshop"
+  j2ee-spec="5.0"
+  archive="ktshop.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

@@ -103,7 +103,7 @@ public class ProductDao extends BaseDao{
 	}
 	
 	//order=true => ORDER BY DESC
-	public List<Map<String, Object>> getProducts(int cid,String column,boolean order){
+	public List<Map<String, Object>> getProductsOrdered(int cid,String column,boolean order){
 		String sql = "SELECT * FROM product WHERE categoryid = ? AND is_offshelve = 0 ORDER BY ? ?";
 		List<Object> params =new ArrayList<Object>();
 		params.add(cid);
@@ -163,9 +163,10 @@ public class ProductDao extends BaseDao{
 		return flag;
 	}
 	
-	public boolean salesProduct(int id){
-		String sql = "UPDATE product SET sales = sales + 1 WHERE id = ?";
+	public boolean sellProduct(int id,int count){
+		String sql = "UPDATE product SET sales = sales + ? WHERE id = ?";
 		List<Object> params =new ArrayList<Object>();
+		params.add(count);
 		params.add(id);
 		boolean flag = false;
 		try {

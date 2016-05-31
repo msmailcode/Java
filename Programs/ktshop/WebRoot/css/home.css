@@ -1,0 +1,25 @@
+/* ===  ****  模版页面   CSS定义 *****  =====   */
+*{padding:0px; margin:0px;line-height:1.8em;}
+
+body{
+    font-family: Arial, Tahoma,"宋体";    /*文字字体定义 */
+	font-size: 12px;    /*文字大小定义 */
+	color: #606060; /*文字颜色定义 */}
+
+
+ol, ul {list-style: none outside none}
+img{border:0px}}
+.clear{clear:both; line-height:0; height:0;}
+.clear:after{content: "."; display: block; height: 0; clear: both; visibility: hidden; }/*清除浮动*/
+/*首页轮换广告 , width=556px, height=250px*/		
+#rotateAdv_1 .arrow{position:absolute;margin-top:90px;width:50px;height:70px;filter:Alpha(Opacity=50);opacity:0.5;background-image:url(../images/arrow.gif);background-repeat:no-repeat;z-index:2;cursor:pointer}
+#rotateAdv_1 .scroller-prev{left:-50px;background-position:-66px -10px;}
+#rotateAdv_1 .scroller-next{right:-50px;background-position:-66px -100px;}
+#rotateAdv_1 .prev-on{background-position:-5px -10px}
+#rotateAdv_1 .next-on{background-position:-5px -100px}/*代码整理及结构优化：www.97zzw.com - 97站长网*/
+#playShow_1{position: absolute;z-index: 1;width: 700px;height: 250px;left: 0;top: 0;}
+#playShow_1 img{width:700px;height:250px;}
+#playNum_1{position:absolute;z-index:2;top:251px}
+#playNum_1 li{float:left;width:32px;height:24px;line-height:24px;text-align:center;color:#fff;background:#bbb;border-right:1px solid #fc0;cursor:default}
+#playNum_1 li.edge{border:none;}
+

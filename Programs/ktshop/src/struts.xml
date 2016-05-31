@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE struts PUBLIC   
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"   
+    "http://struts.apache.org/dtds/struts-2.0.dtd"> 
+<struts>
+
+    <constant name="struts.i18n.encoding" value="GB2312" />
+  <constant name="struts.ui.themeDir" value="struts"/>
+
+    <package name="com.shop" extends="struts-default">   
+    <action name="addNews" class="newsAction" method="save">
+            <result name="success">savenewssuccess.jsp</result>
+        </action>
+        <action name="newsAction" class="newsAction" method="list">
+             <result name="list">news/newslist.jsp</result>
+        </action>
+        <action name="viewNews" class="newsAction" method="get">       
+            <result name="success">news/viewnews.jsp</result>     
+        </action> 
+            <action name="addAd" class="adAction" method="save">
+            <result name="success">saveadsuccess.jsp</result>
+        </action>
+        <action name="listAd" class="adAction" method="list">
+             <result name="list">ad/ad.jsp</result>
+        </action>
+                <action name="listAd2" class="adAction" method="list">
+             <result name="list">/admin/ad/adlist.jsp</result>
+        </action>
+            <action name="getAd" class="adAction" method="get">       
+            <result name="success">/admin/ad/modifyad.jsp</result>     
+        </action>   
+        <action name="modifyAd" class="adAction" method="modify">       
+            <result name="success">/admin/ad/modifyadok.jsp</result>  
+        </action>
+         <action name="deleteAd" class="adAction" method="delete">
+            <result name="success">/admin/ad/deleteadsuccess.jsp</result>
+        </action>
+        <action name="addNotice" class="noticeAction" method="save">
+            <result name="success">/admin/notice/savenoticesuccess.jsp</result>
+        </action>    
+        <action name="listNotice" class="noticeAction" method="list">
+            <result name="list">notice/notice.jsp</result>
+        </action>    
+          <action name="showNotice" class="noticeAction" method="get">       
+            <result name="success">notice/shownotice.jsp</result>     
+        </action>   
+        <action name="addBigtype" class="bigtypeAction" method="save">       
+            <result name="success">/admin/type/success.jsp</result>  
+        </action>
+        <action name="listBigtype" class="bigtypeAction" method="list">       
+            <result name="bigtype">/type/listtype.jsp</result>  
+        </action>
+           <action name="listType" class="bigtypeAction" method="list2">       
+            <result name="type">/type/listtype2.jsp</result>  
+        </action>
+            <action name="listMenu" class="bigtypeAction" method="list3">       
+            <result name="listbigtype">/type/listmenubigtype.jsp</result>  
+        </action>
+            <action name="listBigtype2" class="bigtypeAction" method="list">       
+            <result name="bigtype">/admin/type/addsmalltype.jsp</result>  
+        </action>
+        <action name="addSmalltype" class="smalltypeAction" method="save">       
+            <result name="success">/admin/type/savesmalltypesuccess.jsp</result>  
+        </action>
+        <action name="listSmalltype" class="smalltypeAction" method="list2">       
+            <result name="success">/type/listsmalltype.jsp</result>  
+        </action>
+        <action name="addUser" class="userAction" method="save">       
+            <result name="success">success.jsp</result>  
+        </action>
+        <action name="adminUser" class="userAction" method="list">       
+            <result name="list">/admin/user/userlist.jsp</result>     
+        </action>
+        <action name="getUser" class="userAction" method="getUser1">       
+            <result name="success">/user/modifyuser.jsp</result>     
+        </action>
+        <action name="modifyUser" class="userAction" method="modify">       
+             <result name="success">/user/modifyuserok.jsp</result>  
+        </action>
+        <action name="deleteUser" class="userAction" method="delete">       
+            <result>/admin/user/deletesuccess.jsp</result>     
+        </action>
+        <action name="viewUser" class="userAction" method="view">       
+            <result name="success">usermoreinfo.jsp</result>     
+        </action>    
+        <action name="getUser2" class="userAction" method="getUser1">       
+            <result name="success">/user/userinfo.jsp</result>     
+        </action>
+        <action name="userAction" class="userAction" method="list">       
+            <result name="list">userlist.jsp</result>   
+        </action>       
+        <action name="loginAction" class="userAction" method="login"> 
+            <result name="success">index.jsp</result> 
+            <result name="error">login/loginerror.jsp</result> 
+        </action> 
+           <action name="loginAction2" class="userAction" method="login"> 
+            <result name="success">index.jsp</result> 
+            <result name="error">./login/loginerror.jsp</result> 
+        </action> 
+         <action name="logoutAction" class="userAction" method="logout">
+            <result name="success">index.jsp</result>
+        </action>
+ 
+        <action name="productAction" class="productAction" method="save">
+            <result name="success">product/saveproductsuccess.jsp</result>
+        </action>
+        <action name="productsAction" class="productAction" method="list">
+             <result name="list">product/index.jsp</result>
+        </action>
+          <action name="productsAction2" class="productAction" method="list">
+             <result name="list">product/productslist.jsp</result>
+        </action>
+         <action name="productsAction3" class="productAction" method="list2">
+             <result name="list">product/recommend.jsp</result>
+        </action>
+           <action name="listProducts2" class="productAction" method="show2">
+            <result name="success">product/bigcategoryproducts.jsp</result>
+        </action>
+          <action name="listProducts" class="productAction" method="show">
+            <result name="success">product/smallcategoryproducts.jsp</result>
+        </action>
+        <action name="showProduct" class="productAction" method="get">       
+            <result name="success">product/showproduct.jsp</result>     
+        </action> 
+        <action name="getProduct" class="productAction" method="get">       
+            <result name="success">/admin/product/modifyproduct.jsp</result>     
+        </action>   
+        <action name="adminProducts" class="productAction" method="list">       
+            <result name="list">/admin/product/productslist.jsp</result>     
+        </action>
+        <action name="modifyProduct" class="productAction" method="modify">       
+            <result name="success">/admin/product/modifyproductok.jsp</result>  
+        </action>
+        <action name="deleteProduct" class="productAction" method="delete">
+            <result name="success">/admin/product/deleteproductsuccess.jsp</result>
+        </action>
+        
+        <action name="addCart" class="cartAction" method="add">
+            <result name="success">/cart/viewcart.jsp</result>
+        </action>
+        <action name="deleteCart" class="cartAction" method="delete">
+            <result name="success">/cart/viewcart.jsp</result>
+        </action>
+        <action name="updateCart" class="cartAction" method="update">
+            <result name="success">/cart/viewcart.jsp</result>
+        </action>
+        <action name="clearCart" class="cartAction" method="clear">
+            <result name="success">/cart/viewcart.jsp</result>
+        </action>
+        
+        <action name="saveOrder" class="orderAction" method="save">
+            <result name="success">/order/saveordersuccess.jsp</result>
+        </action>
+              <action name="viewOrder" class="orderAction" method="list">
+            <result name="list">/admin/order/orderlist.jsp</result>
+        </action>
+        
+        <action name="adminLogin" class="adminAction" method="adminrLogin"> 
+            <result name="success" type="redirect">frame.jsp</result> 
+            <result name="error">adminloginerror.jsp</result> 
+        </action>       
+        <action name="logoutAdmin" class="adminAction" method="logout">
+            <result name="success">index.jsp</result>
+        </action>
+        
+        <action name="upload" class="com.shop.action.FileUploadAction">
+            <result name="input">upload/upload.jsp</result>
+            <result>upload_success.jsp</result>
+        </action>
+        
+          <action name="addProduct" class="questiontypeAction" method="list">
+            <result name="success">/admin/product/addproduct.jsp</result>
+            <result name="error">errors.jsp</result>
+        </action>
+        
+        <action name="listType2" class="questiontypeAction" method="list">
+            <result name="success">/admin/type/listtype.jsp</result>
+            <result name="error">errors.jsp</result>
+        </action>       
+         
+    </package>
+
+</struts>    

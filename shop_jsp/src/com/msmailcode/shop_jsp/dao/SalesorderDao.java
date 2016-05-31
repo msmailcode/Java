@@ -70,6 +70,20 @@ public class SalesorderDao extends BaseDao {
 		return flag;
 	}
 	
+	public boolean shipOrder(int id){
+		String sql = "UPDATE salesorder SET is_shipped = 1 WHERE id = ?";
+		List<Object> params =new ArrayList<Object>();
+		params.add(id);
+		boolean flag = false;
+		try {
+			flag = db.execute(sql,params);
+		} catch (SQLException e){
+			e.printStackTrace();
+		} finally {
+			db.close();
+		}
+		return flag;
+	}
 	public List<Map<String, Object>> getUnshippedOrders(){
 		String sql = "SELECT id,address,phone,ordertime FROM salesorder WHERE is_payed = 1 and is_shipped = 0 ";
 		List<Object> params =new ArrayList<Object>();

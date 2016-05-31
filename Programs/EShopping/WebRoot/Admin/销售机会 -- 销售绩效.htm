@@ -1,0 +1,201 @@
+<%@ page language="java" pageEncoding="gb2312"%>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0121)http://luhua.ddns.com.cn:81/netcrm/crm_sale_performance/crm_sale_performance_list.aspx?crm_menu_parentid=9&crm_menu_id=49 -->
+<HTML><HEAD><TITLE>销售机会</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=gb2312">
+<META content="MSHTML 6.00.3790.2706" name=GENERATOR>
+<META content=C# name=CODE_LANGUAGE>
+<META content=JavaScript name=vs_defaultClientScript>
+<META content=http://schemas.microsoft.com/intellisense/ie5 
+name=vs_targetSchema><LINK href="销售机会 -- 销售绩效_files/style_crm.css" 
+rel=stylesheet>
+<SCRIPT language=javascript src="销售机会 -- 销售绩效_files/js_customer.js"></SCRIPT>
+
+<SCRIPT language=javascript src="销售机会 -- 销售绩效_files/js_window.js"></SCRIPT>
+
+<SCRIPT language=javascript src="销售机会 -- 销售绩效_files/js_check.js"></SCRIPT>
+
+<SCRIPT language=javascript src="销售机会 -- 销售绩效_files/js_common.js"></SCRIPT>
+
+<SCRIPT language=vbscript src="销售机会 -- 销售绩效_files/vbs_date.vbs"></SCRIPT>
+
+<SCRIPT language=javascript>
+		   //查看
+		   function doShow(ID,realname,sdate,edate,stype)
+		   {
+		      if(ID == 3||ID == 4)
+		      {
+		         if (ID == 3)
+					{var ret = show_modal_window_ex('/netcrm/crm_sale_performance/SCustomer.aspx?realname='+ realname+'&s_date='+sdate+'&e_date='+edate+'&stype='+stype,'['+realname+']的期初客户数',680,540,'scroll:yes');}
+				else{
+					var ret = show_modal_window_ex('/netcrm/crm_sale_performance/SCustomer.aspx?realname='+ realname+'&s_date='+sdate+'&e_date='+edate+'&stype=1','['+realname+']的新建客户数',680,540,'scroll:yes');
+				}
+		      }
+		      if(ID == 5)
+		       {
+		        var ret = show_modal_window_ex('/netcrm/crm_sale_performance/SLog.aspx?realname='+ realname+'&s_date='+sdate+'&e_date='+edate+'&stype='+stype,'['+realname+']的本期接触',680,540,'scroll:yes');
+		       }
+		      if (ID == 6)
+		        {var ret = show_modal_window_ex('/netcrm/crm_sale_performance/Scontract.aspx?realname='+ realname+'&s_date='+sdate+'&e_date='+edate+'&stype='+stype,'['+realname+']的本期订单',680,540,'scroll:yes');}
+		      if(ID == 7)
+		        {var ret = show_modal_window_ex('/netcrm/crm_sale_performance/SContract_Sale.aspx?realname='+ realname+'&s_date='+sdate+'&e_date='+edate+'&stype='+stype,'['+realname+']的本期回款',680,540,'scroll:yes');}
+		   }
+		</SCRIPT>
+</HEAD>
+<BODY class=body_normal leftMargin=0 topMargin=0><FONT face=宋体>
+<FORM id=form1 name=form1 
+action=crm_sale_performance_list.aspx?crm_menu_parentid=9&amp;crm_menu_id=49 
+method=post><INPUT type=hidden name=__EVENTTARGET> <INPUT type=hidden 
+name=__EVENTARGUMENT> <INPUT type=hidden 
+value=dDwtMTI1MTQzMzQwMTt0PDtsPGk8MT47PjtsPHQ8O2w8aTwxPjs+O2w8dDw7bDxpPDA+O2k8Mj47PjtsPHQ8O2w8aTwwPjs+O2w8dDw7bDxpPDA+Oz47bDx0PDtsPGk8MT47PjtsPHQ8dDxwPDtwPGw8b25jaGFuZ2U7PjtsPHZic2NyaXB0OlNldERhdGUoZG9jdW1lbnQuYWxsKCdkZGxTaWduJykudmFsdWUpOz4+Pjt0PGk8NT47QDzmnKzml6U75pys5ZGoO+acrOaciDvmnKzlraM75pys5bm0Oz47QDzmnKzml6U75pys5ZGoO+acrOaciDvmnKzlraM75pys5bm0Oz4+Oz47Oz47Pj47Pj47Pj47dDxAMDxwPHA8bDxQYWdlQ291bnQ7XyFJdGVtQ291bnQ7XyFEYXRhU291cmNlSXRlbUNvdW50O0RhdGFLZXlzOz47bDxpPDE+O2k8MT47aTwxPjtsPD47Pj47Pjs7Ozs7Ozs7Ozs+O2w8aTwwPjs+O2w8dDw7bDxpPDE+O2k8Mj47PjtsPHQ8O2w8aTwwPjtpPDE+O2k8Mj47aTwzPjtpPDQ+O2k8NT47aTw2PjtpPDc+O2k8OD47PjtsPHQ8cDw7cDxsPHN0eWxlO29ubW91c2VvdmVyO29ubW91c2VvdXQ7PjtsPGN1cnNvcjpoYW5kO3RoaXMuY2xhc3NOYW1lPSdkYXRhZ3JpZF9pdGVtc3R5bGVfb3ZlcidcOzt0aGlzLmNsYXNzTmFtZT0nZGF0YWdyaWRfaXRlbXN0eWxlX25vcm1hbCdcOzs+Pj47Oz47dDxwPDtwPGw8c3R5bGU7b25tb3VzZW92ZXI7b25tb3VzZW91dDs+O2w8Y3Vyc29yOmhhbmQ7dGhpcy5jbGFzc05hbWU9J2RhdGFncmlkX2l0ZW1zdHlsZV9vdmVyJ1w7O3RoaXMuY2xhc3NOYW1lPSdkYXRhZ3JpZF9pdGVtc3R5bGVfbm9ybWFsJ1w7Oz4+PjtsPGk8MD47PjtsPHQ8QDwxOz47Oz47Pj47dDxwPDtwPGw8c3R5bGU7b25tb3VzZW92ZXI7b25tb3VzZW91dDs+O2w8Y3Vyc29yOmhhbmQ7dGhpcy5jbGFzc05hbWU9J2RhdGFncmlkX2l0ZW1zdHlsZV9vdmVyJ1w7O3RoaXMuY2xhc3NOYW1lPSdkYXRhZ3JpZF9pdGVtc3R5bGVfbm9ybWFsJ1w7Oz4+PjtsPGk8Mj47PjtsPHQ8QDzppbbnvqQ7Pjs7Pjs+Pjt0PHA8O3A8bDxzdHlsZTtvbm1vdXNlb3Zlcjtvbm1vdXNlb3V0O29uQ2xpY2s7PjtsPGN1cnNvcjpoYW5kO3RoaXMuY2xhc3NOYW1lPSdkYXRhZ3JpZF9pdGVtc3R5bGVfb3ZlcidcOzt0aGlzLmNsYXNzTmFtZT0nZGF0YWdyaWRfaXRlbXN0eWxlX25vcm1hbCdcOztqYXZhc2NyaXB0OmRvU2hvdygnMycsJ+mltue+pCcsJzIwMDYtNy0yNCcsJzIwMDYtNy0yNCcsJycpXDs7Pj4+O2w8aTwyPjs+O2w8dDxAPDA7Pjs7Pjs+Pjt0PHA8O3A8bDxzdHlsZTtvbm1vdXNlb3Zlcjtvbm1vdXNlb3V0O29uQ2xpY2s7PjtsPGN1cnNvcjpoYW5kO3RoaXMuY2xhc3NOYW1lPSdkYXRhZ3JpZF9pdGVtc3R5bGVfb3ZlcidcOzt0aGlzLmNsYXNzTmFtZT0nZGF0YWdyaWRfaXRlbXN0eWxlX25vcm1hbCdcOztqYXZhc2NyaXB0OmRvU2hvdygnNCcsJ+mltue+pCcsJzIwMDYtNy0yNCcsJzIwMDYtNy0yNCcsJycpXDs7Pj4+O2w8aTwyPjs+O2w8dDxAPDA7Pjs7Pjs+Pjt0PHA8O3A8bDxzdHlsZTtvbm1vdXNlb3Zlcjtvbm1vdXNlb3V0O29uQ2xpY2s7PjtsPGN1cnNvcjpoYW5kO3RoaXMuY2xhc3NOYW1lPSdkYXRhZ3JpZF9pdGVtc3R5bGVfb3ZlcidcOzt0aGlzLmNsYXNzTmFtZT0nZGF0YWdyaWRfaXRlbXN0eWxlX25vcm1hbCdcOztqYXZhc2NyaXB0OmRvU2hvdygnNScsJ+mltue+pCcsJzIwMDYtNy0yNCcsJzIwMDYtNy0yNCcsJycpXDs7Pj4+O2w8aTwyPjs+O2w8dDxAPDA7Pjs7Pjs+Pjt0PHA8O3A8bDxzdHlsZTtvbm1vdXNlb3Zlcjtvbm1vdXNlb3V0O29uQ2xpY2s7PjtsPGN1cnNvcjpoYW5kO3RoaXMuY2xhc3NOYW1lPSdkYXRhZ3JpZF9pdGVtc3R5bGVfb3ZlcidcOzt0aGlzLmNsYXNzTmFtZT0nZGF0YWdyaWRfaXRlbXN0eWxlX25vcm1hbCdcOztqYXZhc2NyaXB0OmRvU2hvdygnNicsJ+mltue+pCcsJzIwMDYtNy0yNCcsJzIwMDYtNy0yNCcsJycpXDs7Pj4+O2w8aTwwPjs+O2w8dDxAPDAlOz47Oz47Pj47dDxwPDtwPGw8c3R5bGU7b25tb3VzZW92ZXI7b25tb3VzZW91dDtvbkNsaWNrOz47bDxjdXJzb3I6aGFuZDt0aGlzLmNsYXNzTmFtZT0nZGF0YWdyaWRfaXRlbXN0eWxlX292ZXInXDs7dGhpcy5jbGFzc05hbWU9J2RhdGFncmlkX2l0ZW1zdHlsZV9ub3JtYWwnXDs7amF2YXNjcmlwdDpkb1Nob3coJzcnLCfppbbnvqQnLCcyMDA2LTctMjQnLCcyMDA2LTctMjQnLCcnKVw7Oz4+PjtsPGk8Mj47PjtsPHQ8QDwwOz47Oz47Pj47dDxwPDtwPGw8c3R5bGU7b25tb3VzZW92ZXI7b25tb3VzZW91dDtvbkNsaWNrOz47bDxjdXJzb3I6aGFuZDt0aGlzLmNsYXNzTmFtZT0nZGF0YWdyaWRfaXRlbXN0eWxlX292ZXInXDs7dGhpcy5jbGFzc05hbWU9J2RhdGFncmlkX2l0ZW1zdHlsZV9ub3JtYWwnXDs7amF2YXNjcmlwdDpkb1Nob3coJzgnLCfppbbnvqQnLCcyMDA2LTctMjQnLCcyMDA2LTctMjQnLCcnKVw7Oz4+PjtsPGk8MD47PjtsPHQ8QDwwJTs+Ozs+Oz4+Oz4+O3Q8O2w8aTwyPjtpPDM+O2k8ND47aTw1PjtpPDc+Oz47bDx0PHA8cDxsPFRleHQ7PjtsPCDlkIjorqEgOz4+Oz47Oz47dDxwPHA8bDxUZXh0Oz47bDwwOz4+Oz47Oz47dDxwPHA8bDxUZXh0Oz47bDwwLjAwOz4+Oz47Oz47dDxwPHA8bDxUZXh0Oz47bDwwLjAwOz4+Oz47Oz47dDxwPHA8bDxUZXh0Oz47bDwwLjAwOz4+Oz47Oz47Pj47Pj47Pj47Pj47Pj47Pj47bDxDaGtTYWxlO0Noa0NvbnRyYWN0O0RhdGFHcmlkMTpfY3RsMjpjaGtJdGVtOz4+IrG7fDxJ7cQzQ0hP/K2tfiJOvLQ= 
+name=__VIEWSTATE>
+<SCRIPT language=javascript>
+<!--
+	function __doPostBack(eventTarget, eventArgument) {
+		var theform;
+		if (window.navigator.appName.toLowerCase().indexOf("netscape") > -1) {
+			theform = document.forms["form1"];
+		}
+		else {
+			theform = document.form1;
+		}
+		theform.__EVENTTARGET.value = eventTarget.split("$").join(":");
+		theform.__EVENTARGUMENT.value = eventArgument;
+		theform.submit();
+	}
+// -->
+</SCRIPT>
+ 
+<TABLE id=Table1 style="HEIGHT: 40px" cellSpacing=0 cellPadding=0 width="100%" 
+align=center border=0>
+  <TBODY>
+  <TR>
+    <TD class=sys_title_left width="50%">&nbsp;</TD>
+    <TD class=sys_title_right width="50%">&nbsp;<FONT 
+      class=font_title>销售绩效</FONT>&nbsp;</TD></TR></TBODY></TABLE>
+<TABLE id=Table2 cellSpacing=0 cellPadding=2 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD id=tdToolbar width="100%" height=30>
+      <TABLE id=Table3 cellSpacing=0 cellPadding=2 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD noWrap>
+            <TABLE class=table_search id=Table4 cellSpacing=0 cellPadding=3 
+            width="100%">
+              <TBODY>
+              <TR>
+                <TD noWrap width="1%"><SELECT id=ddlSign 
+                  onchange="vbscript:SetDate(document.all('ddlSign').value)" 
+                  name=ddlSign> <OPTION value=本日 selected>本日</OPTION> <OPTION 
+                    value=本周>本周</OPTION> <OPTION value=本月>本月</OPTION> <OPTION 
+                    value=本季>本季</OPTION> <OPTION 
+                  value=本年>本年</OPTION></SELECT><INPUT id=s_date 
+                  style="WIDTH: 80px" value=2006-7-24 name=s_date> <IMG 
+                  id=ImgDate style="CURSOR: hand" 
+                  onclick="ret=get_date_normal(document.all('s_date').value);if (ret!=  null) document.all('s_date').value=ret;" 
+                  src="销售机会 -- 销售绩效_files/calendar.gif" align=absMiddle> 至 
+                  <INPUT id=e_date style="WIDTH: 80px" value=2006-7-24 
+                  name=e_date> <IMG id=Img1 style="CURSOR: hand" 
+                  onclick="ret=get_date_normal(document.all('e_date').value);if (ret!=  null) document.all('e_date').value=ret;" 
+                  src="销售机会 -- 销售绩效_files/calendar.gif" align=absMiddle><SPAN 
+                  id=Label11> 销售员</SPAN><INPUT class=text_normal id=UserList 
+                  style="WIDTH: 128px" readOnly value=饶群 name=UserList><INPUT 
+                  class=text_normal id=UserListID style="WIDTH: 0px" 
+                  name=UserListID> <IMG style="CURSOR: hand" 
+                  onclick="doField(2,'crm_chance');" height=12 
+                  src="销售机会 -- 销售绩效_files/address_book.gif" width=15 
+                  align=absMiddle border=0></TD>
+                <TD noWrap width=*><INPUT id=TblName style="WIDTH: 0px" 
+                  value=crm_statistic_sale name=TblName> <INPUT id=ChkSale 
+                  type=checkbox CHECKED name=ChkSale><LABEL 
+                  for=ChkSale>订单</LABEL> <INPUT id=ChkContract type=checkbox 
+                  name=ChkContract><LABEL for=ChkContract>合同</LABEL><INPUT class=button_normal id=btnSearch onmouseover="this.className='button_focus';" accessKey=s onmouseout="this.className='button_normal';" type=submit value=统计(S) name=btnSearch></TD></TR></TBODY></TABLE></TD></TR>
+        <TR>
+          <TD height=5></TD></TR>
+        <TR>
+          <TD height=1></TD></TR></TBODY></TABLE>
+      <TABLE class=datagrid_normal id=DataGrid1 
+      style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; WIDTH: 100%; BORDER-RIGHT-WIDTH: 0px" 
+      cellSpacing=1 cellPadding=0 rules=all border=0>
+        <TBODY>
+        <TR class=datagrid_headerstyle_normal align=middle nowrap="nowrap">
+          <TD noWrap align=middle>序号</TD>
+          <TD noWrap align=middle><A 
+            href="javascript:__doPostBack('DataGrid1$_ctl1$_ctl0','')">员工姓名</A></TD>
+          <TD noWrap align=middle><A 
+            href="javascript:__doPostBack('DataGrid1$_ctl1$_ctl1','')">本期销售</A></TD>
+          <TD noWrap align=middle><A 
+            href="javascript:__doPostBack('DataGrid1$_ctl1$_ctl2','')">本期回款</A></TD>
+          <TD noWrap align=middle><A 
+            href="javascript:__doPostBack('DataGrid1$_ctl1$_ctl3','')">本月销售</A></TD>
+          <TD noWrap align=middle><A 
+            href="javascript:__doPostBack('DataGrid1$_ctl1$_ctl4','')">本月进度</A></TD>
+          <TD noWrap align=middle><A 
+            href="javascript:__doPostBack('DataGrid1$_ctl1$_ctl5','')">本季销售</A></TD>
+          <TD noWrap align=middle><A 
+            href="javascript:__doPostBack('DataGrid1$_ctl1$_ctl6','')">本季进度</A></TD></TR>
+        <TR class=datagrid_itemstyle_normal align=middle nowrap="nowrap">
+          <TD onmouseover="this.className='datagrid_itemstyle_over';" 
+          style="CURSOR: hand" 
+          onmouseout="this.className='datagrid_itemstyle_normal';" noWrap 
+          align=middle>&nbsp;1 </TD>
+          <TD onmouseover="this.className='datagrid_itemstyle_over';" 
+          style="CURSOR: hand" 
+          onmouseout="this.className='datagrid_itemstyle_normal';" noWrap 
+          align=middle><INPUT id=DataGrid1__ctl2_TxtName type=hidden value=饶群 
+            name=DataGrid1:_ctl2:TxtName> &nbsp;饶群 </TD>
+          <TD onmouseover="this.className='datagrid_itemstyle_over';" 
+          style="CURSOR: hand" 
+          onclick="javascript:doShow('3','饶群','2006-7-24','2006-7-24','');" 
+          onmouseout="this.className='datagrid_itemstyle_normal';" noWrap 
+          align=middle><INPUT id=DataGrid1__ctl2_TSaleCount type=hidden 
+            value=0 name=DataGrid1:_ctl2:TSaleCount> &nbsp;0 </TD>
+          <TD onmouseover="this.className='datagrid_itemstyle_over';" 
+          style="CURSOR: hand" 
+          onclick="javascript:doShow('4','饶群','2006-7-24','2006-7-24','');" 
+          onmouseout="this.className='datagrid_itemstyle_normal';" noWrap 
+          align=middle><INPUT id=DataGrid1__ctl2_TSaleJe type=hidden value=0 
+            name=DataGrid1:_ctl2:TSaleJe> &nbsp;0 </TD>
+          <TD onmouseover="this.className='datagrid_itemstyle_over';" 
+          style="CURSOR: hand" 
+          onclick="javascript:doShow('5','饶群','2006-7-24','2006-7-24','');" 
+          onmouseout="this.className='datagrid_itemstyle_normal';" noWrap 
+          align=middle><INPUT id=DataGrid1__ctl2_TSaleMonth type=hidden 
+            value=0 name=DataGrid1:_ctl2:TSaleMonth> &nbsp;0 </TD>
+          <TD onmouseover="this.className='datagrid_itemstyle_over';" 
+          style="CURSOR: hand" 
+          onclick="javascript:doShow('6','饶群','2006-7-24','2006-7-24','');" 
+          onmouseout="this.className='datagrid_itemstyle_normal';" noWrap 
+          align=middle>0% </TD>
+          <TD onmouseover="this.className='datagrid_itemstyle_over';" 
+          style="CURSOR: hand" 
+          onclick="javascript:doShow('7','饶群','2006-7-24','2006-7-24','');" 
+          onmouseout="this.className='datagrid_itemstyle_normal';" noWrap 
+          align=middle><INPUT id=DataGrid1__ctl2_TSaleQuart type=hidden 
+            value=0 name=DataGrid1:_ctl2:TSaleQuart> 0 </TD>
+          <TD onmouseover="this.className='datagrid_itemstyle_over';" 
+          style="CURSOR: hand" 
+          onclick="javascript:doShow('8','饶群','2006-7-24','2006-7-24','');" 
+          onmouseout="this.className='datagrid_itemstyle_normal';" noWrap 
+          align=middle>0% </TD></TR>
+        <TR class=datagrid_headerstyle_normal>
+          <TD>&nbsp;</TD>
+          <TD style="FONT-WEIGHT: bold" align=middle>合计 </TD>
+          <TD style="FONT-WEIGHT: bold" align=middle>0</TD>
+          <TD style="FONT-WEIGHT: bold" align=middle>0.00</TD>
+          <TD style="FONT-WEIGHT: bold" align=middle>0.00</TD>
+          <TD>&nbsp;</TD>
+          <TD style="FONT-WEIGHT: bold" align=middle>0.00</TD>
+          <TD align=middle>&nbsp;</TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+<TABLE id=Table6 cellSpacing=0 cellPadding=0 width="100%">
+  <TBODY>
+  <TR>
+    <TD width=5></TD>
+    <TD><INPUT id=tbSortType style="WIDTH: 0px" value=Desc 
+      name=tbSortType><INPUT id=tbSortField style="WIDTH: 0px" 
+      name=tbSortField><INPUT id=tbUnderLing style="WIDTH: 0px" 
+      name=tbUnderLing><INPUT id=tbIF style="WIDTH: 0px" name=tbIF><INPUT 
+      id=tbSQL style="WIDTH: 0px" value=0 name=tbSQL><SELECT language=javascript 
+      id=ddlTitle style="WIDTH: 0px" onchange="__doPostBack('ddlTitle','')" 
+      name=ddlTitle></SELECT>&nbsp;&nbsp;&nbsp;</TD></TR></TBODY></TABLE></FORM></FONT></BODY></HTML>

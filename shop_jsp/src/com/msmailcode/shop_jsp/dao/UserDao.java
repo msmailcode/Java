@@ -69,11 +69,11 @@ public class UserDao extends BaseDao{
 		return flag;
 	}
 	
-	public void updateLogin(String username){
-		String sql = "UPDATE user SET lastlogin = ? WHERE username = ?";
+	public void updateLogin(int id){
+		String sql = "UPDATE user SET lastlogin = ? WHERE id = ?";
 		List<Object> params =new ArrayList<Object>();
 		params.add(new Timestamp(System.currentTimeMillis()));
-		params.add(username);
+		params.add(id);
 		try {
 			db.execute(sql, params);
 		} catch (SQLException e) {

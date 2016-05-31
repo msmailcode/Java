@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+<!-- dataSource config -->
+
+    <bean id ="dataSource" class ="org.apache.commons.dbcp.BasicDataSource" destroy-method="close"> 
+        <property name="driverClassName" value="org.gjt.mm.mysql.Driver" /> 
+        <property name="url" value="jdbc:mysql://localhost:3306/ktshop" /> 
+        <property name="username" value="root" /> 
+        <property name="password" value="123456789"/> 
+    </bean> 
+    
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		  <property name="dataSource">
+            <ref bean="dataSource"/>
+        </property>		
+		<property name="configLocation"
+			value="classpath:hibernate.cfg.xml">
+		</property>
+	</bean>
+	
+	<bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+          <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+
+    <bean id="transactionInterceptor"  class="org.springframework.transaction.interceptor.TransactionInterceptor">       
+        <property name="transactionManager">       
+            <ref bean="transactionManager" />       
+        </property>                 
+        <property name="transactionAttributes">       
+            <props>       
+                <prop key="save*">PROPAGATION_REQUIRED</prop>       
+                <prop key="del*">PROPAGATION_REQUIRED</prop>       
+                <prop key="update*">PROPAGATION_REQUIRED</prop>       
+                <prop key="create*">PROPAGATION_REQUIRED</prop>       
+                <prop key="add*">PROPAGATION_REQUIRED</prop>       
+                <prop key="find*">PROPAGATION_REQUIRED</prop>       
+                <prop key="get*">PROPAGATION_REQUIRED</prop>       
+                <prop key="*">PROPAGATION_REQUIRED</prop>       
+            </props>       
+        </property>       
+    </bean>     
+
+    <bean id="hibernateTemplate" class="org.springframework.orm.hibernate3.HibernateTemplate">
+        <property name="sessionFactory">
+            <ref bean="sessionFactory"/>
+        </property>
+    </bean>
+    
+        <bean id="newsDao" class="com.shop.dao.NewsDaoImpl" scope="singleton">
+        <property name="sessionFactory"><ref local="sessionFactory"/></property>
+    </bean>
+    <bean id="newsService" class="com.shop.service.NewsServiceImpl"> 
+        <property name="newsDao" ref="newsDao"></property>
+    </bean>
+    <bean id="newsAction" class="com.shop.action.NewsAction" scope="prototype">  
+         <property name="newsService" ref="newsService"></property>       
+    </bean>
+    
+           <bean id="adDao" class="com.shop.dao.AdDaoImpl" scope="singleton">
+        <property name="sessionFactory"><ref local="sessionFactory"/></property>
+    </bean>
+    <bean id="adService" class="com.shop.service.AdServiceImpl"> 
+        <property name="adDao" ref="adDao"></property>
+    </bean>
+    <bean id="adAction" class="com.shop.action.AdAction" scope="prototype">  
+         <property name="adService" ref="adService"></property>       
+    </bean>
+    
+       <bean id="noticeDao" class="com.shop.dao.NoticeDaoImpl" scope="singleton">
+        <property name="sessionFactory"><ref local="sessionFactory"/></property>
+    </bean>
+    <bean id="noticeService" class="com.shop.service.NoticeServiceImpl"> 
+        <property name="noticeDao" ref="noticeDao"></property>
+    </bean>
+    <bean id="noticeAction" class="com.shop.action.NoticeAction" scope="prototype">  
+         <property name="noticeService" ref="noticeService"></property>       
+    </bean>
+   
+    <bean id="bigtypeDao" class="com.shop.dao.BigtypeDaoImpl" scope="singleton">
+        <property name="sessionFactory"><ref local="sessionFactory"/></property>
+    </bean>
+    <bean id="bigtypeService" class="com.shop.service.BigtypeServiceImpl"> 
+        <property name="bigtypeDao" ref="bigtypeDao"></property>
+    </bean>
+    <bean id="bigtypeAction" class="com.shop.action.BigtypeAction" scope="prototype">  
+         <property name="bigtypeService" ref="bigtypeService"></property>       
+         <property name="smalltypeService" ref="smalltypeService"></property>   
+    </bean>
+
+    <bean id="smalltypeDao" class="com.shop.dao.SmalltypeDaoImpl" scope="singleton">
+        <property name="sessionFactory"><ref local="sessionFactory"/></property>
+    </bean>
+    <bean id="smalltypeService" class="com.shop.service.SmalltypeServiceImpl"> 
+        <property name="smalltypeDao" ref="smalltypeDao"></property>
+    </bean>
+    <bean id="smalltypeAction" class="com.shop.action.SmalltypeAction" scope="prototype">  
+         <property name="smalltypeService" ref="smalltypeService"></property>       
+    </bean>
+    <bean name="questiontypeAction" class="com.shop.action.QuestionTypeAction">
+         <property name="bigtypeService">
+         <ref bean="bigtypeService"/>
+    </property>
+    </bean>
+    <bean id="userDao" class="com.shop.dao.UserDaoImpl" scope="singleton">
+        <property name="sessionFactory"><ref local="sessionFactory"/></property>
+    </bean>
+    <bean id="userService" class="com.shop.service.UserServiceImpl"> 
+        <property name="userDao" ref="userDao"></property>
+    </bean>
+    <bean id="userAction" class="com.shop.action.UserAction" scope="prototype">  
+        <property name="userService" ref="userService"></property>       
+    </bean>
+
+    <bean id="productsDao" class="com.shop.dao.ProductsDaoImpl" scope="singleton">
+        <property name="sessionFactory"><ref local="sessionFactory"/></property>
+    </bean>
+    <bean id="productsService" class="com.shop.service.ProductsServiceImpl"> 
+        <property name="productsDao" ref="productsDao"></property>
+    </bean>
+    <bean id="productAction" class="com.shop.action.ProductsAction" scope="prototype">  
+        <property name="productsService" ref="productsService"></property>       
+    </bean>
+    <bean id="cartAction" class="com.shop.action.CartAction" scope="prototype"> 
+        <property name="productsService" ref="productsService"></property>     
+    </bean>
+
+    <bean id="orderDao" class="com.shop.dao.OrderDaoImpl" scope="singleton">
+        <property name="sessionFactory"><ref local="sessionFactory"/></property>
+    </bean>
+    <bean id="orderService" class="com.shop.service.OrderServiceImpl"> 
+        <property name="orderDao" ref="orderDao"></property>
+    </bean>
+    <bean id="orderAction" class="com.shop.action.OrderAction" scope="prototype">  
+        <property name="OrderService" ref="orderService"></property>       
+    </bean>
+
+    <bean id="adminDao" class="com.shop.dao.AdminDaoImpl" scope="singleton">
+        <property name="sessionFactory"><ref local="sessionFactory"/></property>
+    </bean>
+    <bean id="adminService" class="com.shop.service.AdminServiceImpl"> 
+        <property name="adminDao" ref="adminDao"></property>
+    </bean>
+    <bean id="adminAction" class="com.shop.action.AdminAction" scope="prototype">  
+        <property name="adminService" ref="adminService"></property>       
+    </bean>
+</beans>

@@ -1,0 +1,785 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.4" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee   http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+  <listener>
+    <listener-class>listener.SessionNum</listener-class>
+  </listener>
+  
+  <servlet>
+    <servlet-name>action</servlet-name>
+    <servlet-class>org.apache.struts.action.ActionServlet</servlet-class>
+    <init-param>
+      <param-name>config</param-name>
+      <param-value>/WEB-INF/struts-config.xml</param-value>
+    </init-param>
+    <init-param>
+      <param-name>debug</param-name>
+      <param-value>3</param-value>
+    </init-param>
+    <init-param>
+      <param-name>detail</param-name>
+      <param-value>3</param-value>
+    </init-param>
+    <load-on-startup>0</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>action</servlet-name>
+    <url-pattern>*.do</url-pattern>
+  </servlet-mapping>
+  
+  
+    <servlet>
+    <servlet-name>CheckServlet</servlet-name>
+    <servlet-class>servlet.CheckServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>RegisterServlet</servlet-name>
+    <servlet-class>servlet.RegisterServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>CheckNameServlet</servlet-name>
+    <servlet-class>servlet.CheckNameServlet</servlet-class>
+  </servlet>
+
+
+
+  <servlet-mapping>
+    <servlet-name>CheckServlet</servlet-name>
+    <url-pattern>/servlet/CheckServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>RegisterServlet</servlet-name>
+    <url-pattern>/servlet/RegisterServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CheckNameServlet</servlet-name>
+    <url-pattern>/servlet/CheckNameServlet</url-pattern>
+  </servlet-mapping>
+  
+   <servlet>
+    <servlet-name>LoginCheck</servlet-name>
+    <servlet-class>servlet.LoginCheck</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>DelServlet</servlet-name>
+    <servlet-class>adminservlet.DelServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>AddServlet</servlet-name>
+    <servlet-class>servlet.AddServlet</servlet-class>
+  </servlet>
+  
+  <servlet>
+    <servlet-name>ModSuccessServlet</servlet-name>
+    <servlet-class>adminservlet.ModSuccessServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>QueryServlet</servlet-name>
+    <servlet-class>servlet.QueryServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>AdminCheck</servlet-name>
+    <servlet-class>servlet.AdminCheck</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>TypeServlet</servlet-name>
+    <servlet-class>adminservlet.TypeServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>DelTypeInfo</servlet-name>
+    <servlet-class>adminservlet.DelTypeInfo</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ToModTypeInfo</servlet-name>
+    <servlet-class>adminservlet.ToModTypeInfo</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>AdminCateList</servlet-name>
+    <servlet-class>adminservlet.AdminCateList</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>QueryCate</servlet-name>
+    <servlet-class>adminservlet.QueryCate</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>OutExcel</servlet-name>
+    <servlet-class>servlet.OutExcel</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>FileUpLoadServlet</servlet-name>
+    <servlet-class>until.FileUpLoadServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>AddMerSpe</servlet-name>
+    <servlet-class>adminservlet.AddMerSpe</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>DelBook</servlet-name>
+    <servlet-class>adminservlet.DelBook</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ToModBookInfo</servlet-name>
+    <servlet-class>adminservlet.ToModBookInfo</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>AdminBookList</servlet-name>
+    <servlet-class>adminservlet.AdminBookList</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ToModBookSuccess</servlet-name>
+    <servlet-class>adminservlet.ToModBookSuccess</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>DelAllBook</servlet-name>
+    <servlet-class>adminservlet.DelAllBook</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>SalePriceList</servlet-name>
+    <servlet-class>adminservlet.SalePriceList</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>AdminMerList</servlet-name>
+    <servlet-class>adminservlet.AdminMerList</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>MemberInfo</servlet-name>
+    <servlet-class>adminservlet.MemberInfo</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>StopMember</servlet-name>
+    <servlet-class>adminservlet.StopMember</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>OnLockMember</servlet-name>
+    <servlet-class>adminservlet.OnLockMember</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ResetPassWord</servlet-name>
+    <servlet-class>adminservlet.ResetPassWord</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>DelAllMember</servlet-name>
+    <servlet-class>adminservlet.DelAllMember</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>QueryMember</servlet-name>
+    <servlet-class>adminservlet.QueryMember</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>AdminOrderList</servlet-name>
+    <servlet-class>adminservlet.AdminOrderList</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>QueryOrder</servlet-name>
+    <servlet-class>adminservlet.QueryOrder</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>CheckOrderOne</servlet-name>
+    <servlet-class>adminservlet.CheckOrderOne</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ListAllIndex</servlet-name>
+    <servlet-class>servlet.ListAllIndex</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>MoreSecShop</servlet-name>
+    <servlet-class>servlet.MoreSecShop</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>MoreNewShop</servlet-name>
+    <servlet-class>servlet.MoreNewShop</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>QueryGoods</servlet-name>
+    <servlet-class>servlet.QueryGoods</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>QueryOneInfo</servlet-name>
+    <servlet-class>servlet.QueryOneInfo</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ToModRegister</servlet-name>
+    <servlet-class>servlet.ToModRegister</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ModMemberInfoSuccess</servlet-name>
+    <servlet-class>servlet.ModMemberInfoSuccess</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>SortByTypeName</servlet-name>
+    <servlet-class>servlet.SortByTypeName</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>CommentBook</servlet-name>
+    <servlet-class>servlet.CommentBook</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>CommentBookOne</servlet-name>
+    <servlet-class>servlet.CommentBookOne</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>AllComment</servlet-name>
+    <servlet-class>servlet.AllComment</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>TakeCart</servlet-name>
+    <servlet-class>servlet.TakeCart</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>LookCart</servlet-name>
+    <servlet-class>servlet.LookCart</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ModNum</servlet-name>
+    <servlet-class>servlet.ModNum</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>DelOneCart</servlet-name>
+    <servlet-class>servlet.DelOneCart</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>DelAllCart</servlet-name>
+    <servlet-class>servlet.DelAllCart</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>OutExcelMember</servlet-name>
+    <servlet-class>servlet.OutExcelMember</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>OutExcelLeaveWord</servlet-name>
+    <servlet-class>servlet.OutExcelLeaveWord</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>OutExcelBook</servlet-name>
+    <servlet-class>servlet.OutExcelBook</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>OutExcelOrders</servlet-name>
+    <servlet-class>servlet.OutExcelOrders</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>CheckOrder</servlet-name>
+    <servlet-class>servlet.CheckOrder</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>OrderSuccess</servlet-name>
+    <servlet-class>servlet.OrderSuccess</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>OrderMessage</servlet-name>
+    <servlet-class>servlet.OrderMessage</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>CheckOrderInfo</servlet-name>
+    <servlet-class>servlet.CheckOrderInfo</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>DelOneOrder</servlet-name>
+    <servlet-class>servlet.DelOneOrder</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>DealWithOrder</servlet-name>
+    <servlet-class>adminservlet.DealWithOrder</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>DealWithOrderState</servlet-name>
+    <servlet-class>adminservlet.DealWithOrderState</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>DelOrderOne</servlet-name>
+    <servlet-class>adminservlet.DelOrderOne</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>OrderByXiangliang</servlet-name>
+    <servlet-class>adminservlet.OrderByXiangliang</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>OrderByCate</servlet-name>
+    <servlet-class>adminservlet.OrderByCate</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ClientQueryOrder</servlet-name>
+    <servlet-class>servlet.ClientQueryOrder</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>OrderByDate</servlet-name>
+    <servlet-class>adminservlet.OrderByDate</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>CreateTip</servlet-name>
+    <servlet-class>admin.CreateTip</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>AdminSpeList</servlet-name>
+    <servlet-class>adminservlet.AdminSpeList</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>OrderByDateAndCate</servlet-name>
+    <servlet-class>adminservlet.OrderByDateAndCate</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>LeaveMessage</servlet-name>
+    <servlet-class>servlet.LeaveMessage</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>InputWord</servlet-name>
+    <servlet-class>servlet.InputWord</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>AdminLeaveWord</servlet-name>
+    <servlet-class>adminservlet.AdminLeaveWord</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ListLeaveWord</servlet-name>
+    <servlet-class>adminservlet.ListLeaveWord</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>AdminAnswerWord</servlet-name>
+    <servlet-class>adminservlet.AdminAnswerWord</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>AdminUser</servlet-name>
+    <servlet-class>adminservlet.AdminUser</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ModUserInfo</servlet-name>
+    <servlet-class>adminservlet.ModUserInfo</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>DelAdminUser</servlet-name>
+    <servlet-class>adminservlet.DelAdminUser</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>AddUserSuccess</servlet-name>
+    <servlet-class>adminservlet.AddUserSuccess</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ModUserSuccess</servlet-name>
+    <servlet-class>adminservlet.ModUserSuccess</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>OutExcelAdminInfo</servlet-name>
+    <servlet-class>servlet.OutExcelAdminInfo</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>CheckHistory</servlet-name>
+    <servlet-class>servlet.CheckHistory</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>DelLeaveWord</servlet-name>
+    <servlet-class>adminservlet.DelLeaveWord</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>QueryMer</servlet-name>
+    <servlet-class>adminservlet.QueryMer</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>QueryMerSpe</servlet-name>
+    <servlet-class>adminservlet.QueryMerSpe</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>QueryAdminUser</servlet-name>
+    <servlet-class>adminservlet.QueryAdminUser</servlet-class>
+  </servlet>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <servlet-mapping>
+    <servlet-name>LoginCheck</servlet-name>
+    <url-pattern>/servlet/LoginCheck</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DelServlet</servlet-name>
+    <url-pattern>/servlet/DelServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AddServlet</servlet-name>
+    <url-pattern>/servlet/AddServlet</url-pattern>
+  </servlet-mapping>
+ 
+  <servlet-mapping>
+    <servlet-name>ModSuccessServlet</servlet-name>
+    <url-pattern>/servlet/ModSuccessServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>QueryServlet</servlet-name>
+    <url-pattern>/servlet/QueryServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AdminCheck</servlet-name>
+    <url-pattern>/servlet/AdminCheck</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>TypeServlet</servlet-name>
+    <url-pattern>/servlet/TypeServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DelTypeInfo</servlet-name>
+    <url-pattern>/servlet/DelTypeInfo</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ToModTypeInfo</servlet-name>
+    <url-pattern>/servlet/ToModTypeInfo</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AdminCateList</servlet-name>
+    <url-pattern>/servlet/AdminCateList</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>QueryCate</servlet-name>
+    <url-pattern>/servlet/QueryCate</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>OutExcel</servlet-name>
+    <url-pattern>/servlet/OutExcel</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>FileUpLoadServlet</servlet-name>
+    <url-pattern>/servlet/FileUpLoadServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AddMerSpe</servlet-name>
+    <url-pattern>/servlet/AddMerSpe</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DelBook</servlet-name>
+    <url-pattern>/servlet/DelBook</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ToModBookInfo</servlet-name>
+    <url-pattern>/servlet/ToModBookInfo</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AdminBookList</servlet-name>
+    <url-pattern>/servlet/AdminBookList</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ToModBookSuccess</servlet-name>
+    <url-pattern>/servlet/ToModBookSuccess</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DelAllBook</servlet-name>
+    <url-pattern>/servlet/DelAllBook</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SalePriceList</servlet-name>
+    <url-pattern>/servlet/SalePriceList</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AdminMerList</servlet-name>
+    <url-pattern>/servlet/AdminMerList</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>MemberInfo</servlet-name>
+    <url-pattern>/servlet/MemberInfo</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>StopMember</servlet-name>
+    <url-pattern>/servlet/StopMember</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>OnLockMember</servlet-name>
+    <url-pattern>/servlet/OnLockMember</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ResetPassWord</servlet-name>
+    <url-pattern>/servlet/ResetPassWord</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DelAllMember</servlet-name>
+    <url-pattern>/servlet/DelAllMember</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>QueryMember</servlet-name>
+    <url-pattern>/servlet/QueryMember</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AdminOrderList</servlet-name>
+    <url-pattern>/servlet/AdminOrderList</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>QueryOrder</servlet-name>
+    <url-pattern>/servlet/QueryOrder</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ListAllIndex</servlet-name>
+    <url-pattern>/servlet/ListAllIndex</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>MoreSecShop</servlet-name>
+    <url-pattern>/servlet/MoreSecShop</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>MoreNewShop</servlet-name>
+    <url-pattern>/servlet/MoreNewShop</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>QueryGoods</servlet-name>
+    <url-pattern>/servlet/QueryGoods</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>QueryOneInfo</servlet-name>
+    <url-pattern>/servlet/QueryOneInfo</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ToModRegister</servlet-name>
+    <url-pattern>/servlet/ToModRegister</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ModMemberInfoSuccess</servlet-name>
+    <url-pattern>/servlet/ModMemberInfoSuccess</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SortByTypeName</servlet-name>
+    <url-pattern>/servlet/SortByTypeName</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CommentBook</servlet-name>
+    <url-pattern>/servlet/CommentBook</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CommentBookOne</servlet-name>
+    <url-pattern>/servlet/CommentBookOne</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AllComment</servlet-name>
+    <url-pattern>/servlet/AllComment</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>TakeCart</servlet-name>
+    <url-pattern>/servlet/TakeCart</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>LookCart</servlet-name>
+    <url-pattern>/servlet/LookCart</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ModNum</servlet-name>
+    <url-pattern>/servlet/ModNum</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DelOneCart</servlet-name>
+    <url-pattern>/servlet/DelOneCart</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DelAllCart</servlet-name>
+    <url-pattern>/servlet/DelAllCart</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>OutExcelMember</servlet-name>
+    <url-pattern>/servlet/OutExcelMember</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>OutExcelLeaveWord</servlet-name>
+    <url-pattern>/servlet/OutExcelLeaveWord</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>OutExcelBook</servlet-name>
+    <url-pattern>/servlet/OutExcelBook</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>OutExcelOrders</servlet-name>
+    <url-pattern>/servlet/OutExcelOrders</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CheckOrder</servlet-name>
+    <url-pattern>/servlet/CheckOrder</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>OrderSuccess</servlet-name>
+    <url-pattern>/servlet/OrderSuccess</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>OrderMessage</servlet-name>
+    <url-pattern>/servlet/OrderMessage</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CheckOrderInfo</servlet-name>
+    <url-pattern>/servlet/CheckOrderInfo</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DelOneOrder</servlet-name>
+    <url-pattern>/servlet/DelOneOrder</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CheckOrderOne</servlet-name>
+    <url-pattern>/servlet/CheckOrderOne</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DealWithOrder</servlet-name>
+    <url-pattern>/servlet/DealWithOrder</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DealWithOrderState</servlet-name>
+    <url-pattern>/servlet/DealWithOrderState</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DelOrderOne</servlet-name>
+    <url-pattern>/servlet/DelOrderOne</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>OrderByXiangliang</servlet-name>
+    <url-pattern>/servlet/OrderByXiangliang</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>OrderByCate</servlet-name>
+    <url-pattern>/servlet/OrderByCate</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ClientQueryOrder</servlet-name>
+    <url-pattern>/servlet/ClientQueryOrder</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>OrderByDate</servlet-name>
+    <url-pattern>/servlet/OrderByDate</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CreateTip</servlet-name>
+    <url-pattern>/servlet/CreateTip</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AdminSpeList</servlet-name>
+    <url-pattern>/servlet/AdminSpeList</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>OrderByDateAndCate</servlet-name>
+    <url-pattern>/servlet/OrderByDateAndCate</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>LeaveMessage</servlet-name>
+    <url-pattern>/servlet/LeaveMessage</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>InputWord</servlet-name>
+    <url-pattern>/servlet/InputWord</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AdminLeaveWord</servlet-name>
+    <url-pattern>/servlet/AdminLeaveWord</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ListLeaveWord</servlet-name>
+    <url-pattern>/servlet/ListLeaveWord</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AdminAnswerWord</servlet-name>
+    <url-pattern>/servlet/AdminAnswerWord</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AdminUser</servlet-name>
+    <url-pattern>/servlet/AdminUser</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ModUserInfo</servlet-name>
+    <url-pattern>/servlet/ModUserInfo</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DelAdminUser</servlet-name>
+    <url-pattern>/servlet/DelAdminUser</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AddUserSuccess</servlet-name>
+    <url-pattern>/servlet/AddUserSuccess</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ModUserSuccess</servlet-name>
+    <url-pattern>/servlet/ModUserSuccess</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>OutExcelAdminInfo</servlet-name>
+    <url-pattern>/servlet/OutExcelAdminInfo</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CheckHistory</servlet-name>
+    <url-pattern>/servlet/CheckHistory</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DelLeaveWord</servlet-name>
+    <url-pattern>/servlet/DelLeaveWord</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>QueryMer</servlet-name>
+    <url-pattern>/servlet/QueryMer</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>QueryMerSpe</servlet-name>
+    <url-pattern>/servlet/QueryMerSpe</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>QueryAdminUser</servlet-name>
+    <url-pattern>/servlet/QueryAdminUser</url-pattern>
+  </servlet-mapping>
+  
+</web-app>
+

@@ -1,3 +1,4 @@
+<%@ page language="java"  pageEncoding="UTF-8"%> 
     <div class="right_content">
       <div class="cart">
         <div class="title"><span class="title_icon"><img src="images/cart.gif" alt="" title="" /></span>我的购物车</div>

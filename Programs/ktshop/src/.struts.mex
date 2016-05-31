@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <package name="com.shop.action" location="0,0" size="0,0">
+    <action name="addBigtype" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="success.jsp" />
+      </result>
+    </action>
+    <action name="addUser" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="success.jsp" />
+      </result>
+    </action>
+    <action name="adminUser" location="0,0" size="0,0">
+      <result name="list">
+        <resourceEdge source="list" routing="0" target="userlist.jsp" />
+      </result>
+    </action>
+    <action name="getUser" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="modifyuser.jsp" />
+      </result>
+    </action>
+    <action name="modifyUser" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="modifyuserok.jsp" />
+      </result>
+    </action>
+    <action name="deleteUser" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="deletesuccess.jsp" />
+      </result>
+    </action>
+    <action name="viewUser" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="usermoreinfo.jsp" />
+      </result>
+    </action>
+    <action name="getUser2" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="userinfo.jsp" />
+      </result>
+    </action>
+    <action name="userAction" location="0,0" size="0,0">
+      <result name="list">
+        <resourceEdge source="list" routing="0" target="userlist.jsp" />
+      </result>
+    </action>
+    <action name="userLogin" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="index.jsp" />
+      </result>
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="loginerror.jsp" />
+      </result>
+    </action>
+    <action name="logoutAction" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="index.jsp" />
+      </result>
+    </action>
+    <action name="addProduct" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="saveproductsuccess.jsp" />
+      </result>
+    </action>
+    <action name="productsAction" location="0,0" size="0,0">
+      <result name="list">
+        <resourceEdge source="list" routing="0" target="productslist.jsp" />
+      </result>
+    </action>
+    <action name="viewProduct" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="productmoreinfo.jsp" />
+      </result>
+    </action>
+    <action name="getProduct" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="modifyproduct.jsp" />
+      </result>
+    </action>
+    <action name="adminProducts" location="0,0" size="0,0">
+      <result name="list">
+        <resourceEdge source="list" routing="0" target="productslist.jsp" />
+      </result>
+    </action>
+    <action name="modifyProduct" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="modifyproductok.jsp" />
+      </result>
+    </action>
+    <action name="deleteProduct" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="deleteproductsuccess.jsp" />
+      </result>
+    </action>
+    <action name="addCart" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="viewcart.jsp" />
+      </result>
+    </action>
+    <action name="deleteCart" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="viewcart.jsp" />
+      </result>
+    </action>
+    <action name="updateCart" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="viewcart.jsp" />
+      </result>
+    </action>
+    <action name="clearCart" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="viewcart.jsp" />
+      </result>
+    </action>
+    <action name="saveOrder" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="saveordersuccess.jsp" />
+      </result>
+    </action>
+    <action name="adminLogin" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="frame.jsp" />
+      </result>
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="adminloginerror.jsp" />
+      </result>
+    </action>
+    <action name="logoutAdmin" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="index.jsp" />
+      </result>
+    </action>
+    <action name="upload" location="0,0" size="0,0">
+      <result name="input">
+        <resourceEdge source="input" routing="0" target="upload.jsp" />
+      </result>
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="upload_success.jsp" />
+      </result>
+    </action>
+  </package>
+  <webResource name="list.jsp" path="/list.jsp" location="0,0" size="0,0" />
+  <webResource name="success.jsp" path="/success.jsp" location="0,0" size="0,0" />
+  <webResource name="modifyuser.jsp" path="/modifyuser.jsp" location="0,0" size="0,0" />
+  <webResource name="deletesuccess.jsp" path="/deletesuccess.jsp" location="0,0" size="0,0" />
+  <webResource name="modifyuserok.jsp" path="/modifyuserok.jsp" location="0,0" size="0,0" />
+  <webResource name="modifyok.jsp" path="/modifyok.jsp" location="0,0" size="0,0" />
+  <webResource name="upload.jsp" path="/upload.jsp" location="0,0" size="0,0" />
+  <webResource name="upload_success.jsp" path="/upload_success.jsp" location="0,0" size="0,0" />
+  <webResource name="success.jsp" path="success.jsp" location="0,0" size="0,0" />
+  <webResource name="userlist.jsp" path="/admin/user/userlist.jsp" location="0,0" size="0,0" />
+  <webResource name="modifyuser.jsp" path="/admin/user/modifyuser.jsp" location="0,0" size="0,0" />
+  <webResource name="modifyuserok.jsp" path="/admin/user/modifyuserok.jsp" location="0,0" size="0,0" />
+  <webResource name="deletesuccess.jsp" path="/admin/user/deletesuccess.jsp" location="0,0" size="0,0" />
+  <webResource name="usermoreinfo.jsp" path="usermoreinfo.jsp" location="0,0" size="0,0" />
+  <webResource name="userinfo.jsp" path="/user/userinfo.jsp" location="0,0" size="0,0" />
+  <webResource name="userlist.jsp" path="userlist.jsp" location="0,0" size="0,0" />
+  <webResource name="index.jsp" path="index.jsp" location="0,0" size="0,0" />
+  <webResource name="loginerror.jsp" path="login/loginerror.jsp" location="0,0" size="0,0" />
+  <webResource name="saveproductsuccess.jsp" path="saveproductsuccess.jsp" location="0,0" size="0,0" />
+  <webResource name="productslist.jsp" path="product/productslist.jsp" location="0,0" size="0,0" />
+  <webResource name="productmoreinfo.jsp" path="product/productmoreinfo.jsp" location="0,0" size="0,0" />
+  <webResource name="modifyproduct.jsp" path="/admin/product/modifyproduct.jsp" location="0,0" size="0,0" />
+  <webResource name="productslist.jsp" path="/admin/product/productslist.jsp" location="0,0" size="0,0" />
+  <webResource name="modifyproductok.jsp" path="/admin/product/modifyproductok.jsp" location="0,0" size="0,0" />
+  <webResource name="deleteproductsuccess.jsp" path="/admin/product/deleteproductsuccess.jsp" location="0,0" size="0,0" />
+  <webResource name="viewcart.jsp" path="/cart/viewcart.jsp" location="0,0" size="0,0" />
+  <webResource name="viewcart.jsp" path="cart/viewcart.jsp" location="0,0" size="0,0" />
+  <webResource name="saveordersuccess.jsp" path="/order/saveordersuccess.jsp" location="0,0" size="0,0" />
+  <webResource name="upload.jsp" path="upload/upload.jsp" location="0,0" size="0,0" />
+  <webResource name="upload_success.jsp" path="upload_success.jsp" location="0,0" size="0,0" />
+  <webResource name="frame.jsp" path="frame.jsp" location="0,0" size="0,0" />
+  <webResource name="adminloginerror.jsp" path="adminloginerror.jsp" location="0,0" size="0,0" />
+</Struts2Diagram>
+

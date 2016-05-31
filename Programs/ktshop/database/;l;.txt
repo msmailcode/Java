@@ -1,0 +1,3 @@
+已执行的SQL语句: drop database `information_schema` 
+错误编号: 1044 
+错误信息: Access denied for user 'root'@'localhost' to database 'information_schema' 
