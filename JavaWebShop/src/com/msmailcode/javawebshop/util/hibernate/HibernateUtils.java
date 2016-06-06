@@ -4,10 +4,9 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
-import org.hibernate.service.ServiceRegistry;
-import org.hibernate.service.ServiceRegistryBuilder;
-/**
+/*
  * Hibernate工具类，用于获取Session
+ *
  */
 public class HibernateUtils {
 	// 声明SessionFactory对象
@@ -22,14 +21,12 @@ public class HibernateUtils {
 			// 加载Hibernate配置文件
 			cfg.configure();
 			// 实例化SessionFactory
-			//factory = cfg.buildSessionFactory();
-			ServiceRegistry serviceRegistry = new ServiceRegistryBuilder().applySettings(cfg.getProperties()).buildServiceRegistry();
-		    SessionFactory factory = cfg.buildSessionFactory(serviceRegistry);
+			factory = cfg.buildSessionFactory();
 		} catch (HibernateException e) {
 			e.printStackTrace(); // 打印异常信息
 		}
 	}
-	/**
+	/*
 	 * 获取Session对象
 	 * @return Session对象
 	 */
@@ -47,7 +44,7 @@ public class HibernateUtils {
 		}
 		return session;
 	}
-	/**
+	/*
 	 * 获取SessionFactory对象
 	 * @return SessionFactory对象
 	 */
@@ -55,7 +52,7 @@ public class HibernateUtils {
 		return factory;
 		//return new LocalSessionFactoryBuilder().buildSessionFactory();
 	}
-	/**
+	/*
 	 * 关闭Session
 	 * @param session对象
 	 */
@@ -70,7 +67,7 @@ public class HibernateUtils {
 			}
 		}
 	}
-	/**
+	/*
 	 * 创建SessionFactory对象
 	 */
 	public static void rebuildSessionFactory() {
@@ -78,9 +75,7 @@ public class HibernateUtils {
 			// 加载Hibernate配置文件
 			cfg.configure();
 			// 实例化SessionFactory
-			//factory = cfg.buildSessionFactory();
-			ServiceRegistry serviceRegistry = new ServiceRegistryBuilder().applySettings(cfg.getProperties()).buildServiceRegistry();
-		    SessionFactory factory = cfg.buildSessionFactory(serviceRegistry);
+			factory = cfg.buildSessionFactory();
 		} catch (Exception e) {
 			e.printStackTrace(); // 打印异常信息
 		}

@@ -15,7 +15,7 @@ import com.msmailcode.javawebshop.model.product.ProductInfo;
 @Transactional
 public class ProductDaoImpl extends DaoSupport<ProductInfo> implements ProductDao {
 
-	/**
+	/*
 	 * 查询点击排名前10个商品
 	 */
 	@Override
@@ -26,7 +26,7 @@ public class ProductDaoImpl extends DaoSupport<ProductInfo> implements ProductDa
 		PageModel<ProductInfo> pageModel = find(1, 10, orderby);
 		return pageModel.getList();
 	}
-	/**
+	/*
 	 * 查询推荐商品的前10件，按上架时间降序排序
 	 */
 	@Override
@@ -39,7 +39,7 @@ public class ProductDaoImpl extends DaoSupport<ProductInfo> implements ProductDa
 		PageModel<ProductInfo> pageModel = find(where,parames ,orderby,1,10);
 		return pageModel.getList();
 	}
-	/**
+	/*
 	 * 查询人气最好的前10件商品
 	 */
 	@Override

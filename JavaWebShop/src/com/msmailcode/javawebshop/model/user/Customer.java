@@ -1,9 +1,9 @@
 package com.msmailcode.javawebshop.model.user;
 
 import java.io.Serializable;
-/**
+/*
  * 消费者用户
- * @author Li Yongqiang
+ *
  */
 public class Customer implements Serializable{
 	private static final long serialVersionUID = 1L;

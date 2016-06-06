@@ -3,9 +3,9 @@ package com.msmailcode.javawebshop.model;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
+/*
  * 订单状态
- * @author Li Yongqiang
+ *
  */
 public enum OrderState {
 	DELIVERED {

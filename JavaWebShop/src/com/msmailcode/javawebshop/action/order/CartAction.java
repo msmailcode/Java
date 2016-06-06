@@ -9,9 +9,9 @@ import org.springframework.stereotype.Controller;
 import com.msmailcode.javawebshop.action.BaseAction;
 import com.msmailcode.javawebshop.model.order.OrderItem;
 import com.msmailcode.javawebshop.model.product.ProductInfo;
-/**
+/*
  * 购物车Action
- * @author Li Yongqiang
+ *
  */
 @Scope("prototype")
 @Controller("cartAction")

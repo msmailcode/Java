@@ -19,7 +19,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.msmailcode.javawebshop.model.PageModel;
 import com.msmailcode.javawebshop.util.GenericsUtils;
-/**
+/*
  * Dao支持类
  * @param <T>
  */
@@ -42,21 +42,21 @@ public class DaoSupport<T> implements BaseDao<T>{
 			getSession().delete(t);
 		}
 	}
-	/**
+	/*
 	 * 利用get()方法加载对象，获取对象的详细信息
 	 */
 	@Transactional(propagation=Propagation.NOT_SUPPORTED,readOnly=true)
 	public T get(Serializable entityId) {
 		return (T) getSession().get(this.entityClass, entityId);
 	}
-	/**
+	/*
 	 * 利用load()方法加载对象，获取对象的详细信息
 	 */
 	@Transactional(propagation=Propagation.NOT_SUPPORTED,readOnly=true)
 	public T load(Serializable entityId) {
 		return (T) getSession().load(this.entityClass, entityId);
 	}
-	/**
+	/*
 	 * 利用hql语句查找单条信息
 	 */
 	@Override
@@ -75,7 +75,7 @@ public class DaoSupport<T> implements BaseDao<T>{
 		setQueryParams(query, queryParams);//设置查询参数
 		return query.uniqueResult();
 	}
-	/**
+	/*
 	 * 获取指定对象的信息条数
 	 */
 	@Transactional(propagation=Propagation.NOT_SUPPORTED,readOnly=true)
@@ -83,7 +83,7 @@ public class DaoSupport<T> implements BaseDao<T>{
 		String hql = "select count(*) from " + GenericsUtils.getGenericName(this.entityClass);
 		return (Long)uniqueResult(hql,null);
 	}
-	/**
+	/*
 	 * 利用save()方法保存对象的详细信息
 	 */
 	@Override
@@ -94,7 +94,7 @@ public class DaoSupport<T> implements BaseDao<T>{
 	public void saveOrUpdate(Object obj) {
 		getSession().saveOrUpdate(obj);
 	}
-	/**
+	/*
 	 * 利用update()方法修改对象的详细信息
 	 */
 	@Override
@@ -115,7 +115,7 @@ public class DaoSupport<T> implements BaseDao<T>{
 			Object[] queryParams) {
 		return find(where, queryParams, null, pageNo, maxResult);
 	}
-	/**
+	/*
 	 * 分页查询
 	 * @param where 查询条件
 	 * @param queryParams hql参数值
@@ -200,7 +200,7 @@ public class DaoSupport<T> implements BaseDao<T>{
 		
 		return pageModel;//返回分页的实体对象
 	}
-	/**
+	/*
 	 * 获取分页查询中结果集的起始位置
 	 * @param pageNo 第几页
 	 * @param maxResult 页面显示的记录数
@@ -210,7 +210,7 @@ public class DaoSupport<T> implements BaseDao<T>{
 		int firstResult = (pageNo-1) * maxResult;
 		return firstResult < 0 ? 0 : firstResult;
 	}
-	/**
+	/*
 	 * 对query中的参数赋值
 	 * @param query
 	 * @param queryParams
@@ -222,7 +222,7 @@ public class DaoSupport<T> implements BaseDao<T>{
 			}
 		}
 	}
-	/**
+	/*
 	 * 创建排序hql语句
 	 * @param orderby
 	 * @return 排序字符串
@@ -238,7 +238,7 @@ public class DaoSupport<T> implements BaseDao<T>{
 		}
 		return sb.toString();
 	}
-	/**
+	/*
 	 * 获取Session对象
 	 * @return
 	 */

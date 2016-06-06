@@ -19,7 +19,7 @@ import com.msmailcode.javawebshop.model.order.OrderItem;
 import com.msmailcode.javawebshop.model.user.Customer;
 import com.msmailcode.javawebshop.model.user.User;
 import com.opensymphony.xwork2.ActionSupport;
-/**
+/*
  * 基本Action对象，其它Action的父类
  */
 public class BaseAction extends ActionSupport implements RequestAware,

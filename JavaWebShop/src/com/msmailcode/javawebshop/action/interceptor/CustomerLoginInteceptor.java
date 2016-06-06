@@ -6,9 +6,9 @@ import com.msmailcode.javawebshop.action.BaseAction;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionInvocation;
 import com.opensymphony.xwork2.interceptor.AbstractInterceptor;
-/**
+/*
  * 消费者登录拦截器
- * @author Li Yongqiang
+ *
  *
  */
 public class CustomerLoginInteceptor extends AbstractInterceptor{

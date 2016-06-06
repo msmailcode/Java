@@ -17,16 +17,16 @@ import com.msmailcode.javawebshop.model.order.OrderItem;
 import com.msmailcode.javawebshop.model.product.ProductInfo;
 import com.msmailcode.javawebshop.util.StringUitl;
 import com.opensymphony.xwork2.ModelDriven;
-/**
+/*
  * 订单Action
- * @author Li Yongqiang
+ *
  */
 @Scope("prototype")
 @Controller("orderAction")
 public class OrderAction extends BaseAction implements ModelDriven<Order>{
 	private static final long serialVersionUID = 1L;
 	
-	/**
+	/*
 	 * 下订单
 	 */
 	public String add() throws Exception {
@@ -35,7 +35,7 @@ public class OrderAction extends BaseAction implements ModelDriven<Order>{
 		order.setMobile(getLoginCustomer().getMobile());
 		return ADD;
 	}
-	/**
+	/*
 	 * 订单确认
 	 * @return
 	 * @throws Exception
@@ -43,7 +43,7 @@ public class OrderAction extends BaseAction implements ModelDriven<Order>{
 	public String confirm() throws Exception {
 		return "confirm";//返回订单确认页面
 	}
-	/**
+	/*
 	 * 将订单保存到数据库
 	 * @return String
 	 * @throws Exception
@@ -75,7 +75,7 @@ public class OrderAction extends BaseAction implements ModelDriven<Order>{
 		}
 		return findByCustomer();//返回消费者订单查询的方法
 	}
-	/**
+	/*
 	 * 查询消费者订单
 	 * @return String
 	 * @throws Exception
@@ -92,7 +92,7 @@ public class OrderAction extends BaseAction implements ModelDriven<Order>{
 	}
 	
 	
-	/**
+	/*
 	 * 查询订单
 	 * @return String
 	 * @throws Exception
@@ -129,14 +129,14 @@ public class OrderAction extends BaseAction implements ModelDriven<Order>{
 		pageModel = orderDao.find(where, params.toArray(), orderby, pageNo, pageSize);//执行查询方法
 		return LIST;//返回后台订单列表
 	}
-	/**
+	/*
 	 * 查询指定订单
 	 */
 	public String select() throws Exception {
 		order = orderDao.load(order.getOrderId());
 		return SELECT;
 	}
-	/**
+	/*
 	 * 更新订单状态
 	 * @return
 	 * @throws Exception

@@ -1,9 +1,9 @@
 package com.msmailcode.javawebshop.model.order;
 
 import java.io.Serializable;
-/**
+/*
  * 订单中的商品条目
- * @author Li Yongqiang
+ *
  */
 public class OrderItem implements Serializable{
 	private static final long serialVersionUID = 1L;

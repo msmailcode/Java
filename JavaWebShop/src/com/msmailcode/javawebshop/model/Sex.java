@@ -3,9 +3,9 @@ package com.msmailcode.javawebshop.model;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
+/*
  * 性别枚举类
- * @author Li Yongqiang
+ *
  */
 public enum Sex {
 	BOY{
@@ -26,7 +26,7 @@ public enum Sex {
 			return "不限";
 		}
 	};
-	/**
+	/*
 	 * 获取名称的抽象方法
 	 * @return 名称
 	 */

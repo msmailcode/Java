@@ -7,9 +7,9 @@ import java.util.Set;
 import com.msmailcode.javawebshop.model.OrderState;
 import com.msmailcode.javawebshop.model.PaymentWay;
 import com.msmailcode.javawebshop.model.user.Customer;
-/**
+/*
  * 订单
- * @author Li Yongqiang
+ *
  */
 public class Order implements Serializable {
 	private static final long serialVersionUID = 1L;

@@ -21,15 +21,15 @@ import com.msmailcode.javawebshop.model.product.ProductInfo;
 import com.msmailcode.javawebshop.model.product.UploadFile;
 import com.msmailcode.javawebshop.util.StringUitl;
 import com.opensymphony.xwork2.ModelDriven;
-/**
+/*
  * 商品Action
- * @author Li Yongqiang
+ *
  */
 @Scope("prototype")
 @Controller("productAction")
 public class ProductAction extends BaseAction implements ModelDriven<ProductInfo>{
 	private static final long serialVersionUID = 1L;
-	/**
+	/*
 	 * 根据id查看商品信息(查看后更新人气点击次数)
 	 * @return String
 	 * @throws Exception
@@ -42,7 +42,7 @@ public class ProductAction extends BaseAction implements ModelDriven<ProductInfo
 		}
 		return SELECT;
 	}
-	/**
+	/*
 	 * 根据类别id查询所有商品信息
 	 * @return String
 	 * @throws Exception
@@ -55,7 +55,7 @@ public class ProductAction extends BaseAction implements ModelDriven<ProductInfo
 		}
 		return LIST;
 	}
-	/**
+	/*
 	 * 新品上市
 	 * @return
 	 * @throws Exception
@@ -67,7 +67,7 @@ public class ProductAction extends BaseAction implements ModelDriven<ProductInfo
 		image.put("url", "01.gif");//设置副标题图片
 		return "list";//返回商品列表页面
 	}
-	/**
+	/*
 	 * 热销商品
 	 * @return
 	 * @throws Exception
@@ -79,7 +79,7 @@ public class ProductAction extends BaseAction implements ModelDriven<ProductInfo
 		image.put("url", "03.gif");
 		return "list";//返回商品列表页面
 	}
-	/**
+	/*
 	 * 推荐商品
 	 * @return
 	 * @throws Exception
@@ -93,7 +93,7 @@ public class ProductAction extends BaseAction implements ModelDriven<ProductInfo
 		image.put("url", "06.gif");
 		return "list";//返回商品列表页面
 	}
-	/**
+	/*
 	 * 人气商品
 	 * @return
 	 * @throws Exception
@@ -105,7 +105,7 @@ public class ProductAction extends BaseAction implements ModelDriven<ProductInfo
 		image.put("url", "07.gif");
 		return "list";//返回商品列表页面
 	}
-	/**
+	/*
 	 * 根据名称模糊查询
 	 * @return String
 	 * @throws Exception
@@ -119,7 +119,7 @@ public class ProductAction extends BaseAction implements ModelDriven<ProductInfo
 		image.put("url", "04.gif");
 		return LIST;//返回列表首页
 	}
-	/**
+	/*
 	 * 按人气查询
 	 * @return String
 	 * @throws Exception
@@ -130,7 +130,7 @@ public class ProductAction extends BaseAction implements ModelDriven<ProductInfo
 		pageModel = productDao.find(1, 8, orderby );//执行查找方法
 		return "clickList";//返回product_click_list.jsp页面
 	}
-	/**
+	/*
 	 * 按推荐查询
 	 * @return String
 	 * @throws Exception
@@ -143,7 +143,7 @@ public class ProductAction extends BaseAction implements ModelDriven<ProductInfo
 		pageModel = productDao.find(where, queryParams, orderby, pageNo, pageSize);//执行查询方法
 		return "findList";//返回product_find_list.jsp页面
 	}
-	/**
+	/*
 	 * 按销量查询
 	 * @return String
 	 * @throws Exception
@@ -156,7 +156,7 @@ public class ProductAction extends BaseAction implements ModelDriven<ProductInfo
 	}
 	
 	
-	/**
+	/*
 	 * 添加商品
 	 */
 	@Override
@@ -164,7 +164,7 @@ public class ProductAction extends BaseAction implements ModelDriven<ProductInfo
 		createCategoryTree();
 		return INPUT;
 	}
-	/**
+	/*
 	 * 保存商品
 	 * @return
 	 * @throws Exception
@@ -211,7 +211,7 @@ public class ProductAction extends BaseAction implements ModelDriven<ProductInfo
 		productDao.saveOrUpdate(product);//保存商品信息
 		return list();
 	}
-	/**
+	/*
 	 * 查询商品
 	 * @return
 	 * @throws Exception
@@ -220,7 +220,7 @@ public class ProductAction extends BaseAction implements ModelDriven<ProductInfo
 		pageModel = productDao.find(pageNo, pageSize);//调用公共的查询方法
 		return LIST;//返回后台商品列表页面
 	}
-	/**
+	/*
 	 * 编辑商品
 	 * @return String
 	 * @throws Exception
@@ -230,7 +230,7 @@ public class ProductAction extends BaseAction implements ModelDriven<ProductInfo
 		createCategoryTree();//生成商品的类别树
 		return EDIT;//返回商品信息编辑页面
 	}
-	/**
+	/*
 	 * 删除商品
 	 * @return String
 	 * @throws Exception
@@ -239,7 +239,7 @@ public class ProductAction extends BaseAction implements ModelDriven<ProductInfo
 		productDao.delete(product.getId());//执行删除操作
 		return list();//返回商品列表查找方法
 	}
-	/**
+	/*
 	 * 生成类别树
 	 */
 	private void createCategoryTree(){
@@ -251,7 +251,7 @@ public class ProductAction extends BaseAction implements ModelDriven<ProductInfo
 			setNodeMap(map,category,false);//将节点添加到Map集合中
 		}
 	}
-	/**
+	/*
 	 * 将节点设置到Map中
 	 * @param map 类别树Map
 	 * @param node 类别
@@ -284,7 +284,7 @@ public class ProductAction extends BaseAction implements ModelDriven<ProductInfo
 			}
 		}
 	}
-	/**
+	/*
 	 * 验证商品信息是否有效
 	 */
 	public void validateSave() {

@@ -4,9 +4,9 @@ import java.io.Serializable;
 import java.util.Date;
 
 import com.msmailcode.javawebshop.model.Sex;
-/**
+/*
  * 商品信息
- * @author Li Yongqiang
+ *
  */
 public class ProductInfo implements Serializable {
 	private static final long serialVersionUID = 1L;

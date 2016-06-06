@@ -2,9 +2,9 @@ package com.msmailcode.javawebshop.model.product;
 
 import java.io.Serializable;
 
-/**
+/*
  * 上传文件对象
- * @author Li Yongqiang
+ *
  */
 public class UploadFile implements Serializable{
 	private static final long serialVersionUID = 1L;

@@ -1,7 +1,7 @@
 package com.msmailcode.javawebshop.model;
-/**
+/*
  * 支付方式
- * @author Li Yongqiang
+ *
  */
 public enum PaymentWay {
 	NET_BANK{

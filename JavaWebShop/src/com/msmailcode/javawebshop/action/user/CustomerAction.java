@@ -7,9 +7,9 @@ import com.msmailcode.javawebshop.action.BaseAction;
 import com.msmailcode.javawebshop.model.user.Customer;
 import com.msmailcode.javawebshop.util.AppException;
 import com.opensymphony.xwork2.ModelDriven;
-/**
+/*
  * 顾客Action
- * @author Li Yongqiang
+ *
  */
 @Scope("prototype")
 @Controller("customerAction")
@@ -18,7 +18,7 @@ public class CustomerAction extends BaseAction implements ModelDriven<Customer>{
 	public String login() throws Exception{
 		return CUSTOMER_LOGIN;
 	}
-	/**
+	/*
 	 * 用户注册
 	 * @return
 	 * @throws Exception
@@ -32,7 +32,7 @@ public class CustomerAction extends BaseAction implements ModelDriven<Customer>{
 			throw new AppException("此用户名不可用");//否则返回页面错误信息
 		}
 	}
-	/**
+	/*
 	 * 用户登录 
 	 * @return
 	 * @throws Exception
@@ -48,7 +48,7 @@ public class CustomerAction extends BaseAction implements ModelDriven<Customer>{
 		}
 		return INDEX;//返回网站首页
 	}
-	/**
+	/*
 	 * 用户退出
 	 * @return String
 	 * @throws Exception

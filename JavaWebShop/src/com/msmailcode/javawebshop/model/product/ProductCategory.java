@@ -3,9 +3,9 @@ package com.msmailcode.javawebshop.model.product;
 import java.io.Serializable;
 import java.util.Set;
 import java.util.TreeSet;
-/**
+/*
  * 产品类别
- * @author Li Yongqiang
+ *
  */
 public class ProductCategory implements Serializable {
 	private static final long serialVersionUID = 1L;

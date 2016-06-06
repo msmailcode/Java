@@ -7,9 +7,9 @@ import com.msmailcode.javawebshop.action.BaseAction;
 import com.msmailcode.javawebshop.model.PageModel;
 import com.msmailcode.javawebshop.model.product.ProductCategory;
 import com.opensymphony.xwork2.ModelDriven;
-/**
+/*
  * 商品类别Action对象
- * @author Li Yongqiang
+ *
  *
  */
 @Scope("prototype")
@@ -31,7 +31,7 @@ public class ProductCategoryAction extends BaseAction implements ModelDriven<Pro
 		}
 		return INPUT;
 	}
-	/**
+	/*
 	 * 添加类别
 	 * @return
 	 * @throws Exception
@@ -43,7 +43,7 @@ public class ProductCategoryAction extends BaseAction implements ModelDriven<Pro
 		categoryDao.saveOrUpdate(category);//添加类别信息
 		return list();//返回类别列表的查找方法
 	}
-	/**
+	/*
 	 * 查询类别
 	 * @return
 	 * @throws Exception
@@ -60,7 +60,7 @@ public class ProductCategoryAction extends BaseAction implements ModelDriven<Pro
 		pageModel = categoryDao.find(pageNo,pageSize,where,params);//执行封装的查询方法
 		return LIST;//返回后台类别列表页面
 	}
-	/**
+	/*
 	 * 编辑类别
 	 * @return String
 	 * @throws Exception
@@ -71,7 +71,7 @@ public class ProductCategoryAction extends BaseAction implements ModelDriven<Pro
 		}
 		return EDIT;
 	}
-	/**
+	/*
 	 * 删除类别
 	 * @return String
 	 * @throws Exception

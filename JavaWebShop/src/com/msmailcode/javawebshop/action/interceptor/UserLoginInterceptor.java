@@ -6,9 +6,9 @@ import com.msmailcode.javawebshop.action.BaseAction;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionInvocation;
 import com.opensymphony.xwork2.interceptor.AbstractInterceptor;
-/**
+/*
  * 管理员登录拦截器
- * @author Li Yongqiang
+ *
  */
 public class UserLoginInterceptor extends AbstractInterceptor {
 	private static final long serialVersionUID = 1L;

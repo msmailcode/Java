@@ -1,9 +1,9 @@
 package com.msmailcode.javawebshop.model;
 
 import java.util.List;
-/**
+/*
  * 分页组件
- * @author Li Yongqiang
+ *
  * @param <T> 实体对象
  */
 public class PageModel<T> {
@@ -11,14 +11,14 @@ public class PageModel<T> {
 	private List<T> list;//结果集
 	private int pageNo;//当前页
 	private int pageSize;//每页显示多少条 
-	/**
+	/*
 	 * 取得第一页
 	 * @return 第一页
 	 */
 	public int getTopPageNo() {
 		return 1;
 	}
-	/**
+	/*
 	 * 取得上一页
 	 * @return 上一页
 	 */
@@ -28,7 +28,7 @@ public class PageModel<T> {
 		}
 		return pageNo -1;
 	}
-	/**
+	/*
 	 * 取得下一页
 	 * @return 下一页
 	 */
@@ -38,14 +38,14 @@ public class PageModel<T> {
 		}
 		return pageNo + 1;
 	}
-	/**
+	/*
 	 * 取得最后一页
 	 * @return 最后一页
 	 */
 	public int getBottomPageNo() {
 		return getTotalPages() == 0 ? 1 : getTotalPages();
 	}
-	/**
+	/*
 	 * 取得总页数
 	 * @return
 	 */

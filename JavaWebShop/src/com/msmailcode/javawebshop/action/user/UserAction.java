@@ -6,9 +6,9 @@ import org.springframework.stereotype.Controller;
 import com.msmailcode.javawebshop.action.BaseAction;
 import com.msmailcode.javawebshop.model.user.User;
 import com.opensymphony.xwork2.ModelDriven;
-/**
+/*
  * 用户Action
- * @author Li Yongqiang
+ *
  */
 @Scope("prototype")
 @Controller("userAction")
@@ -17,7 +17,7 @@ public class UserAction extends BaseAction implements ModelDriven<User>{
 	public String login() throws Exception{
 		return USER_LOGIN;
 	}
-	/**
+	/*
 	 * 登录 
 	 * @return
 	 * @throws Exception
@@ -33,7 +33,7 @@ public class UserAction extends BaseAction implements ModelDriven<User>{
 		}
 		return MANAGER;//返回后台管理页面
 	}
-	/**
+	/*
 	 * 退出
 	 * @return String
 	 * @throws Exception

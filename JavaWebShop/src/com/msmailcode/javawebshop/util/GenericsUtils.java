@@ -2,11 +2,12 @@ package com.msmailcode.javawebshop.util;
 
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
-/**
+/*
  * 泛型工具类
+ *
  */
 public class GenericsUtils {
-	/**
+	/*
 	 * 获取泛型的类型
 	 * @param clazz
 	 * @return Class
@@ -20,7 +21,7 @@ public class GenericsUtils {
         } 
 		return (Class) types[0];
 	}
-	/**
+	/*
 	 * 获取对象的类名称
 	 * @param clazz
 	 * @return 类名称
